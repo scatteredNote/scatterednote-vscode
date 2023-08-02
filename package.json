@@ -1,0 +1,74 @@
+{
+  "name": "scatterednote",
+  "version": "0.1.5",
+  "engines": {
+    "vscode": "^1.23.0"
+  },
+  "publisher": "steveoni",
+  "activationEvents": [],
+  "main": "./build/ext-src/extension.js",
+  "contributes": {
+    "keybindings": [
+      {
+        "command": "scatterednote.start",
+        "key": "cmd+k",
+        "mac": "cmd+k"
+      }
+    ],
+    "commands": [
+      {
+        "command": "scatterednote.start",
+        "title": "Start scatterednote",
+        "category": "ScatteredNote"
+      },
+      {
+        "command": "scatterednote.authenticate",
+        "title": "Authenticate",
+        "category": "ScatteredNote"
+      },
+      {
+        "command": "scatterednote.hello",
+        "title": "Hello world",
+        "category": "ScatteredNote"
+      }
+    ]
+  },
+  "dependencies": {
+    "@uiw/react-md-editor": "^3.23.3",
+    "polka": "^0.5.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-select": "^5.7.3",
+    "terser": "^5.15.0",
+    "vscode": "^1.1.17",
+    "yarn": "^1.22.19"
+  },
+  "resolutions": {},
+  "scripts": {
+    "vscode:prepublish": "node ./scripts/build-non-split.js && tsc -p tsconfig.extension.json",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "start": "react-scripts start",
+    "build": "node ./scripts/build-non-split.js && tsc -p tsconfig.extension.json",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.13",
+    "@types/node": "^10.1.2",
+    "@types/polka": "^0.5.4",
+    "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.5",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "react-scripts": "^5.0.1",
+    "rewire": "^6.0.0",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^3.3.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
